@@ -1,0 +1,226 @@
+# java-ile-ornek-soru-cozumleri
+
+youtube video linki:https://youtu.be/K-xDb9dyW8k
+
+yazılım mühendisliği oryantasyon dersi kapsamında hazırlanan 10 örnek java sorusu ve çöümünü içerir.
+
+
+1.SORU
+Ekrana merhaba dünya yazdıran programı yazınız:
+
+public class Main {
+    public static void main(String[] args) {
+		System.out.println("merhaba dünya");
+    } 
+}
+
+2.SORU
+Yaşı girilen bir kişinin ehliyet alıp alamayacağını kontrol eden programı yazınız:
+
+public class Main {
+    public static void main(String[] args) {
+	int yas = 16;
+	if (yas>=18){
+		System.out.println("ehliyet alabilirsiniz");
+	}else{
+		System.out.println("ehliyet alamazsonız");
+    } 
+}
+
+3.SORU
+Kullanıcıdan alınan değerin tek mi çift mi olduğunu bulan programı yazınız:
+
+import java.util.Scanner;
+ 
+ 
+public class Main {
+  
+    public static void main(String[] args) {
+        
+        Scanner oku=new Scanner(System.in);
+        int sayi;
+        System.out.print("Bir tane Tam Sayı Girin :");
+        sayi=oku.nextInt();
+         
+        if (sayi %2==0) {
+            System.out.println(sayi+" Sayısı Çift Sayıdır");
+             
+        }
+        else {
+        System.out.println(sayi+" Sayısı Tek Sayıdır");
+        }
+    } 
+}
+
+4.SORU
+1'den 100'e kadar 2'şer atlayarak sayıları alt alta yazdıran programı yazınız:
+
+
+public class Main {
+    public static void main(String[] args) {
+	for(int i=1; i<=100; i+=2){
+		System.out.println(i);
+		}
+    } 
+}
+
+5.SORU
+1'den 50'ye kadar olan sayılardan 5'e bölünenleri ekrana yazdıran programı yazınız:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner giris=new Scanner(System.in);
+        int sayi;
+        System.out.println("Kontrol etmek istediğiniz sayı=");
+        sayi=giris.nextInt();
+        while(sayi<1||sayi>100){
+        System.out.println("Lütfen 1 den 50 e kadar bir sayı giriniz=");
+        sayi=giris.nextInt();
+        }
+        for(int i=1;i<=50;i++){
+        if(i%5==0){
+        System.out.print(i+" ");
+        }
+        }
+        }
+    }
+
+6.SORU
+Kullanıcıdan alınan değerin faktöriyelini bulan programı yazınız:
+
+import java.util.Scanner;
+ 
+public class Main {
+    
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        int faktoriyel = 1;
+        
+        System.out.println("Bir sayi giriniz: ");
+        int sayi = scan.nextInt();
+        
+        for(int i = 1; i <= sayi; i++)
+        {
+            faktoriyel = faktoriyel * i;
+        }
+        System.out.println(sayi + "!= " + faktoriyel);
+    }
+
+7.SORU
+Fibonacci serisini bulan programı yazınız:
+
+public class Main {
+    public static void main(String args[]) {
+        Scanner reader = new Scanner(System.in);
+        int n1=0,n2=1,n3,i,n;
+        System.out.print("N Sayısını Girin:");
+        n = reader.nextInt();
+        System.out.print(n1+" "+n2);
+  
+ for(i=2;i<n;++i)
+ {  
+  n3=n1+n2;  
+  System.out.print(" "+n3);  
+  n1=n2;  
+  n2=n3;  
+    }
+ System.out.println();
+    }
+    
+}
+
+8.SORU
+önceden tanımlanmış bir şifre ile kullanıcıdan alınan şifrenin doğruluğunu belirleyip ekrana giriş başarılı veya giriş başarısız şeklinde yazan programı yazınız:
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        int dogruParola = 234071;
+
+        System.out.print("Sacede sayılardan oluşan parolanızı girin: ");
+
+        Scanner scanner = new Scanner(System.in);
+        int parolaAl = scanner.nextInt();
+
+        if (dogruParola == parolaAl)
+        {
+            System.out.println("Doğru Parola. Giriş Başarılı!");
+        }
+        else
+        {
+            System.out.println("Hatalı Parola. Giriş Başarısız!");
+        }
+    }
+}
+
+9.SORU
+vücut kitle indeksini hesaplayan programı yazınız:
+
+
+import java.util.Date;
+import java.util.Scanner;
+
+public class JavaOrnekler {
+ 
+    public static void main(String[] args) {
+
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.print("Boyunuzu girin(cm) : ");
+    double b = scanner.nextDouble();
+    
+    System.out.print("Kilonuzu girin(cm) : ");
+    double k = scanner.nextDouble();
+    
+    
+    b=b/100;
+    double endeks  = k/(b*b);
+    
+    System.out.println(b);
+    System.out.println(k);
+    if(endeks <18)
+    {
+       System.out.print(String.format("ZAYIF vki: %f", endeks));
+    }   
+    else if(endeks >= 18 && endeks <25)
+    {
+        System.out.print(String.format("NORMAL vki %f", endeks));
+    }
+    else if(endeks >= 25 && endeks <30)
+    {
+        System.out.print(String.format("KİLOLU vki: %f", endeks));        
+    }
+    else if(endeks >= 30 && endeks <35)
+    {
+        System.out.print(String.format("OBEZ vki: %f", endeks));
+    }
+    else
+    {
+        System.out.print(String.format("CİDDİ OBEZ vki: %f", endeks));
+    }     
+    }  
+}
+
+
+10.SORU
+dairenin alanını,çevresini ve açısı verilen yarım dairenin alanını hesaplayan programı yazınız:
+
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    int r;
+    double alan,cevre,pi = 3.14;
+    
+    Scanner input = new Scanner(System.in);
+    
+    System.out.println("Daire yarı çapını giriniz : ");
+    r = input.nextint();
+    cevre = 2 * pi * r;
+    alan = pi * (r*r);
+    System.out.println("Dairenin Alanı : " + alan);
+    System.out.println("Dairenin Çevresi : " + cevre);
+  }
+}
